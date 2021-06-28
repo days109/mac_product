@@ -1,6 +1,17 @@
 #mac_produce
-
 product = []
+with open('product.csv', 'r', encoding = 'utf-8') as f:
+	for line in f:
+		if '商品,價格' in line:
+			continue
+		(name, price)= line.strip().split(',')
+		product.append([name, price])
+
+
+
+
+
+
 while True:
 	name =  input('請輸入餐點：')
 	if name == 'q':
